@@ -482,7 +482,7 @@ export default function Portfolio() {
               </button>
             ))}
             <a 
-              href="/Heba-Ragheb-FlowCV-Resume-20260108 (4).pdf" 
+              href="/Heba_Ragheb_CV.pdf" 
               download="Heba_Ragheb_CV.pdf"
               style={styles.cvButton}
               className="cv-button-nav"
@@ -514,7 +514,7 @@ export default function Portfolio() {
               </button>
             ))}
             <a 
-              href="/Heba-Ragheb-FlowCV-Resume-20260108 (4).pdf" 
+              href="/Heba_Ragheb_CV.pdf" 
               download="Heba_Ragheb_CV.pdf"
               style={{...styles.mobileMenuItem, display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#10b981', fontWeight: '600'}}
             >
@@ -542,7 +542,7 @@ export default function Portfolio() {
               View Projects
             </button>
             <a 
-              href="/Heba-Ragheb-FlowCV-Resume-20260108 (4).pdf" 
+              href="/Heba_Ragheb_CV.pdf" 
               download="Heba_Ragheb_CV.pdf"
               style={styles.downloadCVButton}
               className="download-cv-button"
