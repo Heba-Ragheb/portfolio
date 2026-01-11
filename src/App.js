@@ -1,5 +1,7 @@
+
 import { useState } from 'react';
-import { Mail, Phone, Github, Linkedin, Code, Database, Server, Shield, Menu, X, ExternalLink, ChevronDown } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, Code, Database, Server, Shield, Menu, X, ExternalLink, ChevronDown, Download, FileText } from 'lucide-react';
+import ProjectCard from "./component/ProjectCard";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -21,53 +23,53 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'MadEase',
-      subtitle: 'Healthcare Platform',
-      description: 'Full-stack telemedicine platform connecting patients and healthcare providers with real-time communication.',
-      tech: ['Node.js', 'Express.js', 'React.js', 'MongoDB', 'Socket.IO', 'JWT', 'OAuth', 'Redis', 'AI Chatbot'],
+      title: 'MERN Booking Application',
+      subtitle: 'Reservation Management System',
+      description: 'A full-stack booking platform that ensures seamless reservations with real-time availability, dynamic slot validation, and automated notifications for a flawless user experience.',
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Context API'],
       features: [
-        'Real-time chat system using Socket.IO for doctor-patient consultations',
-        'Appointment booking with slot validation and automated notifications',
-        'AI-powered chatbot for 24/7 patient support and symptom assessment',
+        'Real-time availability checking and automated booking',
+        'JWT-based authentication with role-based access control',
+        'Dynamic slot validation to prevent double bookings',
       ],
-          screenshot: '/screenShots/med-ease.png',
-      placeholder: '🏥',
-        color: 'linear-gradient(to bottom right, #3b82f6, #06b6d4)',
-      github: 'https://github.com/Heba-Ragheb/medEase',
-      demo: 'https://med-ease-nine.vercel.app/'
+      screenshot: '/screenShots/image.png',
+      placeholder: '📅',
+      color: 'linear-gradient(to bottom right, #22c55e, #14b8a6)',
+      github: 'https://github.com/Heba-Ragheb/mernBooking',
+      demo: 'https://mern-booking-6gbi.vercel.app/'
     },
     {
       title: 'E-Commerce Store',
-      subtitle: 'with Admin Dashboard & Payment System',
-      description: 'Complete online store with secure payment integration, inventory management, and comprehensive admin dashboard.',
+      subtitle: 'Admin Dashboard & Payment Integration',
+      description: 'A full-featured online store with secure payments, inventory management, and a comprehensive admin dashboard for complete control over products, orders, and analytics.',
       tech: ['Node.js', 'Express.js', 'React.js', 'MongoDB', 'JWT', 'Redis', 'Cloudinary', 'Payment Gateway'],
       features: [
-        'Admin Dashboard for managing users, products, orders, and analytics',
+        'Admin dashboard for managing users, products, orders, and analytics',
         'Role-based access control (Admin vs User) using JWT',
         'CRUD operations for products, categories, orders, and users',
       ],
-      screenshot: '/screenShots/mern-store-flame.vercel.app_.png',
+      screenshot: '/screenShots/image1.png',
       placeholder: '🛒',
       color: 'linear-gradient(to bottom right, #a855f7, #ec4899)',
       github: 'https://github.com/Heba-Ragheb/mernStore',
       demo: 'https://mern-store-flame.vercel.app/'
     },
     {
-      title: 'MERN Booking Application',
-      subtitle: 'Reservation Management System',
-      description: 'Full-stack reservation platform with real-time availability checking and automated booking management.',
-      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Context API'],
+      title: 'MadEase',
+      subtitle: 'Healthcare Platform',
+      description: 'A cutting-edge telemedicine platform connecting patients and healthcare providers, featuring real-time consultations, AI-powered support, and appointment scheduling for a seamless healthcare experience.',
+      tech: ['Node.js', 'Express.js', 'React.js', 'MongoDB', 'Socket.IO', 'JWT', 'OAuth', 'Redis', 'AI Chatbot', 'Email Services'],
       features: [
-        'Real-time availability checking and automated booking',
-        'JWT-based authentication and role-based access control',
-        'Dynamic slot validation to prevent double bookings',
+        'Real-time chat system using Socket.IO for doctor-patient consultations',
+        'Appointment booking with slot validation and automated notifications',
+        'AI-powered chatbot for 24/7 patient support and symptom assessment',
       ],
-       screenshot: '/screenShots/image.png',
-      placeholder: '📅',
-      color: 'linear-gradient(to bottom right, #22c55e, #14b8a6)',
-      github: 'https://github.com/Heba-Ragheb/mernBooking',
-      demo: 'https://mern-booking-6gbi.vercel.app/'
-    }
+      screenshot: '/screenShots/med-ease.png',
+      placeholder: '🏥',
+      color: 'linear-gradient(to bottom right, #3b82f6, #06b6d4)',
+      github: 'https://github.com/Heba-Ragheb/medEase',
+      demo: 'https://med-ease-nine.vercel.app/'
+    },
   ];
 
   const experiences = [
@@ -89,7 +91,7 @@ export default function Portfolio() {
     }
   ];
 
- const styles = {
+  const styles = {
     container: {
       minHeight: '100vh',
       background: 'linear-gradient(to bottom right, #111827, #1f2937, #111827)',
@@ -124,7 +126,8 @@ export default function Portfolio() {
     },
     navLinks: {
       display: 'flex',
-      gap: '2rem'
+      gap: '2rem',
+      alignItems: 'center'
     },
     navButton: {
       background: 'none',
@@ -138,6 +141,21 @@ export default function Portfolio() {
     },
     navButtonActive: {
       color: '#60a5fa'
+    },
+    cvButton: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      padding: '0.5rem 1rem',
+      background: 'linear-gradient(to right, #10b981, #059669)',
+      border: 'none',
+      borderRadius: '0.5rem',
+      color: 'white',
+      cursor: 'pointer',
+      fontSize: '0.875rem',
+      fontWeight: '600',
+      textDecoration: 'none',
+      transition: 'all 0.3s'
     },
     mobileMenuButton: {
       background: 'none',
@@ -240,6 +258,21 @@ export default function Portfolio() {
       textDecoration: 'none',
       display: 'inline-block'
     },
+    downloadCVButton: {
+      padding: '0.75rem 2rem',
+      background: 'linear-gradient(to right, #10b981, #059669)',
+      border: 'none',
+      borderRadius: '9999px',
+      color: 'white',
+      fontSize: '1rem',
+      cursor: 'pointer',
+      transition: 'all 0.3s',
+      textDecoration: 'none',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      fontWeight: '600'
+    },
     section: {
       padding: '5rem 1rem'
     },
@@ -312,88 +345,6 @@ export default function Portfolio() {
       borderRadius: '9999px',
       fontSize: '0.875rem',
       border: '1px solid'
-    },
-    projectCard: {
-      backgroundColor: 'rgba(31, 41, 55, 0.5)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '1rem',
-      overflow: 'hidden',
-      border: '1px solid #374151',
-      marginBottom: '3rem',
-      transition: 'all 0.3s'
-    },
-    projectGrid: {
-      display: 'grid',
-      gridTemplateColumns: '2fr 3fr',
-      gap: '1.5rem'
-    },
-    projectImage: {
-      position: 'relative',
-      minHeight: '300px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '5rem'
-    },
-    projectContent: {
-      padding: '2rem'
-    },
-    projectTitle: {
-      fontSize: '1.5rem',
-      fontWeight: 'bold',
-      marginBottom: '0.5rem'
-    },
-    projectSubtitle: {
-      color: '#60a5fa',
-      marginBottom: '1rem'
-    },
-    projectDescription: {
-      color: '#d1d5db',
-      marginBottom: '1rem'
-    },
-    techTags: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '0.5rem',
-      marginBottom: '1rem'
-    },
-    techTag: {
-      padding: '0.25rem 0.5rem',
-      backgroundColor: '#374151',
-      borderRadius: '0.25rem',
-      fontSize: '0.75rem'
-    },
-    featureList: {
-      listStyle: 'none',
-      padding: 0,
-      marginBottom: '1.5rem'
-    },
-    featureItem: {
-      fontSize: '0.875rem',
-      color: '#d1d5db',
-      display: 'flex',
-      alignItems: 'flex-start',
-      marginBottom: '0.5rem'
-    },
-    projectLinks: {
-      display: 'flex',
-      gap: '1rem'
-    },
-    linkButton: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      padding: '0.5rem 1rem',
-      borderRadius: '0.5rem',
-      textDecoration: 'none',
-      color: 'white',
-      transition: 'all 0.3s'
-    },
-    githubButton: {
-      backgroundColor: '#374151'
-    },
-    demoButton: {
-      backgroundColor: '#2563eb'
     },
     expCard: {
       backgroundColor: 'rgba(31, 41, 55, 0.5)',
@@ -487,7 +438,7 @@ export default function Portfolio() {
   };
 
   return (
- <div style={styles.container}>
+    <div style={styles.container}>
       <style>{`
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
@@ -506,13 +457,11 @@ export default function Portfolio() {
         .exp-card:hover { border-color: rgba(168, 85, 247, 0.5) !important; }
         .primary-button:hover { box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.5); transform: scale(1.05); }
         .secondary-button:hover { border-color: #3b82f6; }
+        .download-cv-button:hover { box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.5); transform: scale(1.05); }
+        .cv-button-nav:hover { background: linear-gradient(to right, #059669, #047857) !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); }
         .contact-card-blue { background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.5), rgba(30, 64, 175, 0.3)); border-color: rgba(59, 130, 246, 0.5); }
         .contact-card-blue:hover { border-color: #3b82f6; }
-        .contact-card-purple { background: linear-gradient(to bottom right, rgba(88, 28, 135, 0.5), rgba(107, 33, 168, 0.3)); border-color: rgba(168, 85, 247, 0.5); }
-        .contact-card-purple:hover { border-color: #a855f7; }
         .social-button:hover { background-color: #374151; transform: scale(1.1); }
-        .github-button:hover { background-color: #4b5563; }
-        .demo-button:hover { background-color: #3b82f6; }
         nav button:hover { color: #60a5fa; }
         .mobile-menu-item:hover { background-color: #374151; }
       `}</style>
@@ -532,6 +481,15 @@ export default function Portfolio() {
                 {section}
               </button>
             ))}
+            <a 
+              href="/Heba-Ragheb-FlowCV-Resume-20260108 (4).pdf" 
+              download="Heba_Ragheb_CV.pdf"
+              style={styles.cvButton}
+              className="cv-button-nav"
+            >
+              <Download size={16} />
+              CV
+            </a>
           </div>
 
           <button
@@ -555,6 +513,14 @@ export default function Portfolio() {
                 {section}
               </button>
             ))}
+            <a 
+              href="/Heba-Ragheb-FlowCV-Resume-20260108 (4).pdf" 
+              download="Heba_Ragheb_CV.pdf"
+              style={{...styles.mobileMenuItem, display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#10b981', fontWeight: '600'}}
+            >
+              <Download size={18} />
+              Download CV
+            </a>
           </div>
         )}
       </nav>
@@ -575,10 +541,18 @@ export default function Portfolio() {
             <button onClick={() => scrollToSection('projects')} style={styles.secondaryButton} className="secondary-button">
               View Projects
             </button>
+            <a 
+              href="/Heba-Ragheb-FlowCV-Resume-20260108 (4).pdf" 
+              download="Heba_Ragheb_CV.pdf"
+              style={styles.downloadCVButton}
+              className="download-cv-button"
+            >
+              <Download size={20} />
+              Download CV
+            </a>
           </div>
         </div>
       </section>
-
       {/* About Section */}
       <section id="about" style={styles.section}>
         <div style={styles.container6xl}>
@@ -693,66 +667,10 @@ export default function Portfolio() {
         <div style={styles.container7xl}>
           <h2 style={styles.sectionTitle}>Featured Projects</h2>
           <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem'}}>
-            {projects.map((project, index) => (
-              <div key={index} style={{...styles.projectCard, marginBottom: 0}} className="project-card">
-                <div style={{...styles.projectImage, background: project.color, overflow: 'hidden', height: '200px'}}>
-                  <img 
-                    src={project.screenshot} 
-                    alt={project.title}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0
-                    }}
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = `<div style="font-size: 5rem">${project.placeholder}</div>`;
-                    }}
-                  />
-                </div>
-                <div style={styles.projectContent}>
-                  <h3 style={styles.projectTitle}>{project.title}</h3>
-                  <p style={styles.projectSubtitle}>{project.subtitle}</p>
-                  <p style={styles.projectDescription}>{project.description}</p>
-                  
-                  <div style={{marginBottom: '1rem'}}>
-                    <h4 style={{fontSize: '0.875rem', fontWeight: '600', color: '#9ca3af', marginBottom: '0.5rem'}}>Technologies:</h4>
-                    <div style={styles.techTags}>
-                      {project.tech.slice(0, 4).map((tech) => (
-                        <span key={tech} style={styles.techTag}>{tech}</span>
-                      ))}
-                      {project.tech.length > 4 && <span style={styles.techTag}>+{project.tech.length - 4} more</span>}
-                    </div>
-                  </div>
+          {projects.map((project, index) => (
+  <ProjectCard key={index} project={project} />
+))}
 
-                  <div style={{marginBottom: '1.5rem'}}>
-                    <h4 style={{fontSize: '0.875rem', fontWeight: '600', color: '#9ca3af', marginBottom: '0.5rem'}}>Key Features:</h4>
-                    <ul style={styles.featureList}>
-                      {project.features.slice(0, 2).map((feature, i) => (
-                        <li key={i} style={styles.featureItem}>
-                          <span style={{color: '#22c55e', marginRight: '0.5rem'}}>✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div style={styles.projectLinks}>
-                    <a href={project.github} style={{...styles.linkButton, ...styles.githubButton}} className="github-button">
-                      <Github size={18} />
-                      View Code
-                    </a>
-                    <a href={project.demo} style={{...styles.linkButton, ...styles.demoButton}} className="demo-button">
-                      <ExternalLink size={18} />
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
