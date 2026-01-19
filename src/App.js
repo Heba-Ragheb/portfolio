@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Mail, Phone, Github, Linkedin, Code, Database, Server, Shield, Menu, X, ExternalLink, ChevronDown, Download, FileText } from 'lucide-react';
+import { Mail,  Github, Linkedin, Code, Database, Server, Shield, Menu, X,  Download,  } from 'lucide-react';
 import ProjectCard from "./component/ProjectCard";
 
 export default function Portfolio() {
@@ -343,16 +343,7 @@ export default function Portfolio() {
       fontWeight: '600',
       marginBottom: '1rem'
     },
-    skillsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-      gap: '1.5rem'
-    },
-    skillCard: {
-      borderRadius: '1rem',
-      padding: '1.5rem',
-      border: '1px solid'
-    },
+  
     skillHeader: {
       display: 'flex',
       alignItems: 'center',
@@ -363,11 +354,7 @@ export default function Portfolio() {
       fontWeight: '600',
       marginLeft: '0.75rem'
     },
-    skillTags: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '0.5rem'
-    },
+   
     tag: {
       padding: '0.25rem 0.75rem',
       borderRadius: '9999px',
