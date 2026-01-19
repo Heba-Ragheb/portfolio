@@ -22,39 +22,8 @@ export default function Portfolio() {
   };
 
   const projects = [
-    {
-      title: 'MERN Booking Application',
-      subtitle: 'Reservation Management System',
-      description: 'A full-stack booking platform that ensures seamless reservations with real-time availability, dynamic slot validation, and automated notifications for a flawless user experience.',
-      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Context API'],
-      features: [
-        'Real-time availability checking and automated booking',
-        'JWT-based authentication with role-based access control',
-        'Dynamic slot validation to prevent double bookings',
-      ],
-      screenshot: '/screenShots/image.png',
-      placeholder: '📅',
-      color: 'linear-gradient(to bottom right, #22c55e, #14b8a6)',
-      github: 'https://github.com/Heba-Ragheb/mernBooking',
-      demo: 'https://mern-booking-6gbi.vercel.app/'
-    },
-    {
-      title: 'E-Commerce Store',
-      subtitle: 'Admin Dashboard & Payment Integration',
-      description: 'A full-featured online store with secure payments, inventory management, and a comprehensive admin dashboard for complete control over products, orders, and analytics.',
-      tech: ['Node.js', 'Express.js', 'React.js', 'MongoDB', 'JWT', 'Redis', 'Cloudinary', 'Payment Gateway'],
-      features: [
-        'Admin dashboard for managing users, products, orders, and analytics',
-        'Role-based access control (Admin vs User) using JWT',
-        'CRUD operations for products, categories, orders, and users',
-      ],
-      screenshot: '/screenShots/image1.png',
-      placeholder: '🛒',
-      color: 'linear-gradient(to bottom right, #a855f7, #ec4899)',
-      github: 'https://github.com/Heba-Ragheb/mernStore',
-      demo: 'https://mern-store-flame.vercel.app/'
-    },
-    {
+    
+      {
       title: 'MadEase',
       subtitle: 'Healthcare Platform',
       description: 'A cutting-edge telemedicine platform connecting patients and healthcare providers, featuring real-time consultations, AI-powered support, and appointment scheduling for a seamless healthcare experience.',
@@ -70,6 +39,67 @@ export default function Portfolio() {
       github: 'https://github.com/Heba-Ragheb/medEase',
       demo: 'https://med-ease-nine.vercel.app/'
     },
+    
+    {
+      title: 'E-Commerce Store',
+      subtitle: 'Admin Dashboard & Payment Integration',
+      description: 'A full-featured online store with secure payments, inventory management, and a comprehensive admin dashboard for complete control over products, orders, and analytics.',
+      tech: ['Node.js', 'Express.js', 'React.js', 'MongoDB', 'JWT', 'Redis', 'Cloudinary', 'Payment Gateway'],
+      features: [
+        'Admin dashboard for managing users, products, orders, and analytics',
+        'Role-based access control (Admin vs User) using JWT',
+        'Integrated secure online payment system with automatic stock updates and order validation.',
+        'CRUD operations for products, categories, orders, and users',
+      ],
+      screenshot: '/screenShots/image1.png',
+      placeholder: '🛒',
+      color: 'linear-gradient(to bottom right, #a855f7, #ec4899)',
+      github: 'https://github.com/Heba-Ragheb/mernStore',
+      demo: 'https://mern-store-flame.vercel.app/'
+    },
+     { title: 'MERN Booking Application',
+      subtitle: 'Reservation Management System',
+      description: 'A full-stack booking platform that ensures seamless reservations with real-time availability, dynamic slot validation, and automated notifications for a flawless user experience.',
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Context API'],
+      features: [
+        'Real-time availability checking and automated booking',
+        'JWT-based authentication with role-based access control',
+        'Dynamic slot validation to prevent double bookings',
+      ],
+      screenshot: '/screenShots/image.png',
+      placeholder: '📅',
+      color: 'linear-gradient(to bottom right, #22c55e, #14b8a6)',
+      github: 'https://github.com/Heba-Ragheb/mernBooking',
+      demo: 'https://mern-booking-6gbi.vercel.app/'
+    },
+    {
+  title: 'Clinic Appointment System',
+  subtitle: 'Healthcare Booking Platform',
+  description:
+    'A full-stack clinic appointment management system that allows patients to book appointments seamlessly while enabling doctors and admins to manage schedules efficiently with secure authentication and role-based access.',
+  tech: [
+    'MongoDB',
+    'Express.js',
+    'React.js',
+    'Node.js',
+    'JWT',
+    'Redux',
+    'Socket.IO'
+  ],
+  features: [
+    'Patient appointment booking with real-time availability',
+    'Doctor and admin dashboards for managing schedules and appointments',
+    'JWT-based authentication with role-based access control (Admin / Doctor / Patient)',
+    'Appointment status tracking (Pending, Approved, Cancelled)',
+    'Secure backend APIs with validation and error handling'
+  ],
+  screenshot: '/screenShots/clinic-appointment.png',
+  placeholder: '🏥',
+  color: 'linear-gradient(to bottom right, #3b82f6, #06b6d4)',
+  github: 'https://github.com/Heba-Ragheb/clinic-appointment',
+  demo: 'https://clinic-appointment-2lca.vercel.app'
+}
+ 
   ];
 
   const experiences = [
@@ -259,7 +289,7 @@ export default function Portfolio() {
       display: 'inline-block'
     },
     downloadCVButton: {
-      padding: '0.75rem 2rem',
+        padding: '0.75rem 2rem',
       background: 'linear-gradient(to right, #10b981, #059669)',
       border: 'none',
       borderRadius: '9999px',
@@ -269,9 +299,7 @@ export default function Portfolio() {
       transition: 'all 0.3s',
       textDecoration: 'none',
       display: 'inline-flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      fontWeight: '600'
+     
     },
     section: {
       padding: '5rem 1rem'
@@ -434,7 +462,26 @@ export default function Portfolio() {
       borderTop: '1px solid #374151',
       textAlign: 'center',
       color: '#6b7280'
-    }
+    },
+    skillsGrid: {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  gap: '1.25rem',
+},
+skillCard: {
+  padding: '1.25rem',
+  borderRadius: '1rem',
+  border: '1px solid',
+  backdropFilter: 'blur(12px)',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+},
+skillTags: {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '0.5rem',
+  marginTop: '0.75rem',
+},
+
   };
 
   return (
@@ -464,7 +511,52 @@ export default function Portfolio() {
         .social-button:hover { background-color: #374151; transform: scale(1.1); }
         nav button:hover { color: #60a5fa; }
         .mobile-menu-item:hover { background-color: #374151; }
-      `}</style>
+      /* ===== MOBILE RESPONSIVE FIXES ===== */
+
+@media (max-width: 768px) {
+  /* HERO */
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+   
+    justify-content: center;
+  }
+
+  /* SKILLS */
+  .skill-span-2 {
+    grid-column: span 1 !important;
+  }
+
+  /* EXPERIENCE */
+  .exp-content {
+    flex-direction: column;
+  }
+
+  .exp-period {
+    text-align: left !important;
+    margin-top: 0.5rem;
+  }
+
+  /* CONTACT */
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+`}</style>
 
       {/* Navigation */}
       <nav style={styles.nav}>
@@ -526,7 +618,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" style={styles.hero}>
+      <section id="home" style={styles.hero} className="hero-content">
         <div style={styles.heroContent}>
           <div style={styles.avatar}>👩‍💻</div>
           <h1 style={styles.title}>Heba Ragheb</h1>
@@ -534,7 +626,7 @@ export default function Portfolio() {
           <p style={styles.description}>
             Specializing in building scalable and secure server-side applications with Node.js, Express.js, MongoDB, and modern technologies
           </p>
-          <div style={styles.buttonGroup}>
+          <div style={styles.buttonGroup} className="hero-buttons">
             <button onClick={() => scrollToSection('contact')} style={styles.primaryButton} className="primary-button">
               Get In Touch
             </button>
@@ -589,49 +681,49 @@ export default function Portfolio() {
         <div style={styles.container6xl}>
           <h2 style={styles.sectionTitle}>Technical Skills</h2>
           <div style={styles.skillsGrid}>
-            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(30, 58, 138, 0.5), rgba(30, 64, 175, 0.3))', borderColor: 'rgba(59, 130, 246, 0.5)'}}>
+            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(30, 58, 138, 0.5), rgba(30, 64, 175, 0.3))', borderColor: 'rgba(59, 130, 246, 0.5)'}}  className="skill-span-2">
               <div style={styles.skillHeader}>
                 <Server style={{color: '#60a5fa'}} size={28} />
                 <h3 style={styles.skillTitle}>Backend Development</h3>
               </div>
               <div style={styles.skillTags}>
                 {skills.backend.map((skill) => (
-                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: 'rgba(59, 130, 246, 0.5)'}}>
+                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: 'rgba(59, 130, 246, 0.5)'}}  className="skill-span-2">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(88, 28, 135, 0.5), rgba(107, 33, 168, 0.3))', borderColor: 'rgba(168, 85, 247, 0.5)'}}>
+            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(88, 28, 135, 0.5), rgba(107, 33, 168, 0.3))', borderColor: 'rgba(168, 85, 247, 0.5)'}}  className="skill-span-2">
               <div style={styles.skillHeader}>
                 <Database style={{color: '#a78bfa'}} size={28} />
                 <h3 style={styles.skillTitle}>Database</h3>
               </div>
               <div style={styles.skillTags}>
                 {skills.database.map((skill) => (
-                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(168, 85, 247, 0.2)', borderColor: 'rgba(168, 85, 247, 0.5)'}}>
+                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(168, 85, 247, 0.2)', borderColor: 'rgba(168, 85, 247, 0.5)'}}  className="skill-span-2">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(20, 83, 45, 0.5), rgba(21, 94, 117, 0.3))', borderColor: 'rgba(34, 197, 94, 0.5)'}}>
+            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(20, 83, 45, 0.5), rgba(21, 94, 117, 0.3))', borderColor: 'rgba(34, 197, 94, 0.5)'}}  className="skill-span-2">
               <div style={styles.skillHeader}>
                 <Shield style={{color: '#22c55e'}} size={28} />
                 <h3 style={styles.skillTitle}>Security</h3>
               </div>
               <div style={styles.skillTags}>
                 {skills.security.map((skill) => (
-                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(34, 197, 94, 0.2)', borderColor: 'rgba(34, 197, 94, 0.5)'}}>
+                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(34, 197, 94, 0.2)', borderColor: 'rgba(34, 197, 94, 0.5)'}}  className="skill-span-2">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(8, 76, 97, 0.5), rgba(21, 94, 117, 0.3))', borderColor: 'rgba(6, 182, 212, 0.5)'}}>
+            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(8, 76, 97, 0.5), rgba(21, 94, 117, 0.3))', borderColor: 'rgba(6, 182, 212, 0.5)'}}  className="skill-span-2"> 
               <div style={styles.skillHeader}>
                 <Code style={{color: '#06b6d4'}} size={28} />
                 <h3 style={styles.skillTitle}>Frontend (Basic)</h3>
@@ -645,14 +737,14 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(131, 24, 67, 0.5), rgba(157, 23, 77, 0.3))', borderColor: 'rgba(236, 72, 153, 0.5)', gridColumn: 'span 2'}}>
+            <div style={{...styles.skillCard, background: 'linear-gradient(to bottom right, rgba(131, 24, 67, 0.5), rgba(157, 23, 77, 0.3))', borderColor: 'rgba(236, 72, 153, 0.5)', gridColumn: 'span 2'}}  className="skill-span-2">
               <div style={styles.skillHeader}>
                 <Code style={{color: '#ec4899'}} size={28} />
                 <h3 style={styles.skillTitle}>Tools & Technologies</h3>
               </div>
               <div style={styles.skillTags}>
                 {skills.tools.map((skill) => (
-                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(236, 72, 153, 0.2)', borderColor: 'rgba(236, 72, 153, 0.5)'}}>
+                  <span key={skill} style={{...styles.tag, backgroundColor: 'rgba(236, 72, 153, 0.2)', borderColor: 'rgba(236, 72, 153, 0.5)'}}  className="skill-span-2">
                     {skill}
                   </span>
                 ))}

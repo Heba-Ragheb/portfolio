@@ -1,6 +1,9 @@
-import { Github, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { Github, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function ProjectCard({ project }) {
+  const [showFeatures, setShowFeatures] = useState(false);
+
   return (
     <div
       style={{
@@ -86,8 +89,84 @@ export default function ProjectCard({ project }) {
           )}
         </div>
 
+        {/* Show Features Button */}
+        <button
+          onClick={() => setShowFeatures(!showFeatures)}
+          style={{
+            width: "100%",
+            padding: "0.75rem",
+            background: "rgba(59, 130, 246, 0.1)",
+            border: "1px solid rgba(59, 130, 246, 0.3)",
+            borderRadius: "0.5rem",
+            color: "#60a5fa",
+            cursor: "pointer",
+            fontSize: "0.875rem",
+            fontWeight: "500",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.5rem",
+            marginBottom: "1rem",
+            transition: "all 0.3s"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "rgba(59, 130, 246, 0.2)";
+            e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.5)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(59, 130, 246, 0.1)";
+            e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
+          }}
+        >
+          {showFeatures ? (
+            <>
+              Hide Features <ChevronUp size={16} />
+            </>
+          ) : (
+            <>
+              Show Key Features <ChevronDown size={16} />
+            </>
+          )}
+        </button>
+
+        {/* Features List - Collapsible */}
+        {showFeatures && project.features && (
+          <div 
+            style={{ 
+              marginBottom: "1rem",
+              animation: "slideDown 0.3s ease-out"
+            }}
+          >
+            <ul style={{ 
+              listStyle: "none", 
+              padding: 0, 
+              margin: 0,
+              background: "rgba(17, 24, 39, 0.5)",
+              borderRadius: "0.5rem",
+              padding: "1rem"
+            }}>
+              {project.features.map((feature, i) => (
+                <li 
+                  key={i} 
+                  style={{ 
+                    fontSize: "0.875rem", 
+                    color: "#d1d5db", 
+                    display: "flex", 
+                    alignItems: "flex-start",
+                    marginBottom: i === project.features.length - 1 ? 0 : "0.75rem",
+                    lineHeight: "1.5"
+                  }}
+                >
+                  <span style={{ color: "#22c55e", marginRight: "0.5rem", fontSize: "1rem" }}>✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Actions */}
-        <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
+        <div style={{ display: "flex", gap: "1rem" }}>
           <a
             href={project.github}
             target="_blank"
@@ -145,6 +224,17 @@ export default function ProjectCard({ project }) {
         .project-card:hover {
           border-color: rgba(59, 130, 246, 0.5) !important;
           box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </div>
