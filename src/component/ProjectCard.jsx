@@ -139,7 +139,6 @@ export default function ProjectCard({ project }) {
           >
             <ul style={{ 
               listStyle: "none", 
-              padding: 0, 
               margin: 0,
               background: "rgba(17, 24, 39, 0.5)",
               borderRadius: "0.5rem",
